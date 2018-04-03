@@ -10,15 +10,15 @@
     <section>
           <!-- 1) Show a "result" of 'not there yet' as long as "value" is not equal to 37 - you can change "value" with the buttons. Print 'done' once you did it -->
       <div>
-          <p>Current Value: {{ Evalue }}</p>
-          <button @click="Evalue += 5">Add 5</button>
-          <button @click="Evalue += 1">Add 1</button>
-          <p>{{ Eresult }}</p>
+          <p>Current Value: {{ value }}</p>
+          <button @click="value += 5">Add 5</button>
+          <button @click="value += 1">Add 1</button>
+          <p>{{ outputResult }}</p>
       </div>
       <!-- 2) Watch for changes in the "result" and reset the "value" after 5 seconds (hint: setTimeout(..., 5000) -->
       <div>
           <input type="text">
-          <p>{{ Evalue }}</p>
+          <p>{{ value }}</p>
       </div>
     </section>
   </div>  
@@ -32,8 +32,8 @@ export default {
     return {
       counter: 0,
       secondCounter: 0,
-      Evalue: 0,
-      Eresult: '',
+      value: 0,
+      onCheck: '',
     };
   },
   computed: {
@@ -41,7 +41,7 @@ export default {
       return this.counter > 5 ? 'Greater 5' : 'Smaller than 5'
     },
     outputResult: function() {
-      return this.Eresult !== 37 ? 'You are not there yet!' : 'Done'
+      return this.value !== 37 ? this.onCheck = 'You are not there yet!' : this.onCheck = 'Done'
     },
   },
   watch: {
@@ -51,6 +51,12 @@ export default {
         vm.counter = 0
       }, 2000)
     },
+    value: function() {
+      let vm = this
+      setTimeout(function(){
+        vm.value = 0
+      }, 5000)
+    }
   },
   methods: {
     result: function() {

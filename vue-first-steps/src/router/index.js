@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import BasicExample from '@/components/basic/Basicexample'
 import SecondExample from '@/components/basic/SecondExample'
 import SecondExcersizeSecondHalf from '@/components/basic/SecondExcersizeSecondHalf'
+import SecondExampleCss from '@/components/basic/SecondExampleCss'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/second/half',
       name: 'SecondExcersizeSecondHalf',
       component: SecondExcersizeSecondHalf
+    },
+    {
+      path: '/second/css',
+      name: 'SecondExampleCss',
+      component: SecondExampleCss
     }
   ]
 })
