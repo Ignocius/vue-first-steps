@@ -10,9 +10,9 @@
     <section>
           <!-- 1) Show a "result" of 'not there yet' as long as "value" is not equal to 37 - you can change "value" with the buttons. Print 'done' once you did it -->
       <div>
-          <p>Current Value: {{ value }}</p>
-          <button @click="value += 5">Add 5</button>
-          <button @click="value += 1">Add 1</button>
+          <p>Current Value: {{ Evalue }}</p>
+          <button @click="Evalue += 5">Add 5</button>
+          <button @click="Evalue += 1">Add 1</button>
           <p>{{ Eresult }}</p>
       </div>
       <!-- 2) Watch for changes in the "result" and reset the "value" after 5 seconds (hint: setTimeout(..., 5000) -->
